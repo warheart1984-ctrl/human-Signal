@@ -15,7 +15,7 @@ TOKEN_RE = re.compile(
     r"|[A-Za-zÀ-ÖØ-öø-ÿ]+(?:'[A-Za-zÀ-ÖØ-öø-ÿ]+)?"
     r"|[0-9]+(?:\.[0-9]+)?"
     r"|[ぁ-んァ-ンー]{1,12}"
-    r"|[一-龠々]"
+    r"|[一-龯々]"
     r"|[가-힣]{1,8}"
 )
 
@@ -43,12 +43,12 @@ LAUGHTER_RE = re.compile(
     r"|\bhuehue+\b"
     r"|(?<![:/\w])w{3,}(?![\w.])"
     r"|(?<!\d)5{3,}(?!\d)"
-    r"|哈哈|呵呵|嘿嘿|嘻嘻|笑{2,}|\uff08笑\uff09|\(笑\)"
+    r"|哈哈|呵呵|嘿嘿|嘻嘻|笑{2,}|（笑）|\(笑\)"
     r"|ㅋㅋ+|ㅎㅎ+|하하+|헤헤+"
     r")"
 )
 
-CJK_OR_HANGUL_LAUGH_RE = re.compile(r"哈哈|呵呵|嘿嘿|嘻嘻|笑{2,}|\uff08笑\uff09|\(笑\)|ㅋㅋ+|ㅎㅎ+|하하+|헤헤+")
+CJK_OR_HANGUL_LAUGH_RE = re.compile(r"哈哈|呵呵|嘿嘿|嘻嘻|笑{2,}|（笑）|\(笑\)|ㅋㅋ+|ㅎㅎ+|하하+|헤헤+")
 
 EMOJI_RE = re.compile(
     "["
@@ -114,7 +114,7 @@ CORE_FILLER_RE = re.compile(r"(?i)(?<!\w)(?:uh+|um+|erm+)(?!\w)")
 SARCASM_SLASH_RE = re.compile(r"(?i)(?:^|\s)/s\b")
 QUOTE_RE = re.compile(r"[\"“”]([^\"“”]{2,40})[\"“”]")
 EMOTICON_POS_RE = re.compile(r"(?:(?<!\w)[:;=]-?[)D]|<3|\bxd\b)", re.IGNORECASE)
-EMOTICON_NEG_RE = re.compile(r"(?<!\w)[:;=]-?[("]")
+EMOTICON_NEG_RE = re.compile(r"(?<!\w)[:;=]-?[()]")
 
 ACRONYMS = frozenset(
     {
@@ -390,7 +390,7 @@ def char_bigrams(text: str) -> set[str]:
 def cjk_ratio(text: str) -> float:
     if not text:
         return 0.0
-    cjk = len(re.findall(r"[ぁ-んァ-ン一-龠々가-힣]", text))
+    cjk = len(re.findall(r"[ぁ-んァ-ン一-龯々가-힣]", text))
     return cjk / max(len(text), 1)
 
 
