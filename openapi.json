@@ -1,1 +1,762 @@
-PLACEHOLDER
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "HumanSignal",
+    "summary": "Emotional compiler for conversational signals.",
+    "description": "Turns messy conversational text or a timed transcript into structured, explained signal JSON. Heuristic and deterministic. Not therapy, not a clinical instrument, and not a general sentiment model. The optional enhancer is off unless HUMAN_SIGNAL_ENHANCER is set.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compile": {
+      "post": {
+        "summary": "Compile Endpoint",
+        "operationId": "compile_endpoint_compile_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompileRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompileResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CompileRequest": {
+        "properties": {
+          "text": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 20000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text"
+          },
+          "transcript": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/Segment"
+                },
+                "type": "array",
+                "maxItems": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transcript"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/Segment"
+                },
+                "type": "array",
+                "maxItems": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context"
+          },
+          "speaker": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 80
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker",
+            "description": "Speaker label used when ``text`` is a single turn."
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 16
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language",
+            "description": "BCP-47-ish code (en, es, ja). Omit to detect. Unknown codes use core features only."
+          },
+          "session_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 128
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Session Id"
+          },
+          "reset_session": {
+            "type": "boolean",
+            "title": "Reset Session",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "CompileRequest",
+        "description": "Input to ``POST /compile``.\n\nProvide ``text`` or ``transcript``, not both. ``context`` is prior turns\nfor stateless drift and momentum. ``session_id`` is the stateful equivalent\non a single process."
+      },
+      "CompileResponse": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "1.0.0",
+            "title": "Schema Version",
+            "default": "1.0.0"
+          },
+          "emotional_state": {
+            "$ref": "#/components/schemas/EmotionalState"
+          },
+          "signal_strength": {
+            "$ref": "#/components/schemas/SignalStrength"
+          },
+          "intent_alignment": {
+            "$ref": "#/components/schemas/IntentAlignment"
+          },
+          "pressure_zones": {
+            "items": {
+              "$ref": "#/components/schemas/Zone"
+            },
+            "type": "array",
+            "title": "Pressure Zones"
+          },
+          "momentum_zones": {
+            "items": {
+              "$ref": "#/components/schemas/Zone"
+            },
+            "type": "array",
+            "title": "Momentum Zones"
+          },
+          "connection_score": {
+            "$ref": "#/components/schemas/ConnectionScore"
+          },
+          "recommended_response_style": {
+            "$ref": "#/components/schemas/RecommendedResponseStyle"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "emotional_state",
+          "signal_strength",
+          "intent_alignment",
+          "pressure_zones",
+          "momentum_zones",
+          "connection_score",
+          "recommended_response_style"
+        ],
+        "title": "CompileResponse",
+        "description": "Schema 1.0.0 compile result. Top-level keys are part of the contract."
+      },
+      "ConnectionComponents": {
+        "properties": {
+          "laughter": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Laughter"
+          },
+          "mirroring": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Mirroring"
+          },
+          "rhythm": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Rhythm"
+          },
+          "backchannel": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Backchannel"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "laughter",
+          "mirroring",
+          "rhythm",
+          "backchannel"
+        ],
+        "title": "ConnectionComponents",
+        "description": "Pieces of ``connection_score``. Each is 0..1 before they are combined."
+      },
+      "ConnectionScore": {
+        "properties": {
+          "score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          },
+          "components": {
+            "$ref": "#/components/schemas/ConnectionComponents"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "score",
+          "confidence",
+          "components",
+          "evidence"
+        ],
+        "title": "ConnectionScore",
+        "description": "Dyadic warmth: shared laughter, echo, rhythm. Weak when only one speaker is visible."
+      },
+      "EmotionalState": {
+        "properties": {
+          "frustration": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Frustration"
+          },
+          "excitement": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Excitement"
+          },
+          "confusion": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confusion"
+          },
+          "relief": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Relief"
+          },
+          "dominant": {
+            "type": "string",
+            "enum": [
+              "frustration",
+              "excitement",
+              "confusion",
+              "relief",
+              "neutral"
+            ],
+            "title": "Dominant"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "frustration",
+          "excitement",
+          "confusion",
+          "relief",
+          "dominant",
+          "confidence",
+          "evidence"
+        ],
+        "title": "EmotionalState",
+        "description": "Per-emotion load in ``[0, 1]``. Emotions are not a partition; several can be high."
+      },
+      "Evidence": {
+        "properties": {
+          "feature": {
+            "type": "string",
+            "title": "Feature"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          },
+          "weight": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Weight"
+          },
+          "span": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Span"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "feature",
+          "detail",
+          "weight"
+        ],
+        "title": "Evidence",
+        "description": "One observable cue. ``weight`` is relative strength, not a probability."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status"
+          },
+          "schema_version": {
+            "type": "string",
+            "const": "1.0.0",
+            "title": "Schema Version"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "schema_version"
+        ],
+        "title": "HealthResponse"
+      },
+      "IntentAlignment": {
+        "properties": {
+          "score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "drift": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Drift"
+          },
+          "label": {
+            "type": "string",
+            "enum": [
+              "aligned",
+              "drifting",
+              "contradictory",
+              "uncertain"
+            ],
+            "title": "Label"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "score",
+          "drift",
+          "label",
+          "confidence",
+          "evidence"
+        ],
+        "title": "IntentAlignment",
+        "description": "Whether the wording agrees with the other signals.\n\n``score`` near 1 means the words and the cues point the same way.\n``drift`` near 1 means they diverge (flat agreement, sarcasm, clipped \"fine.\").\nThis is not a judgment that someone is lying."
+      },
+      "RecommendedResponseStyle": {
+        "properties": {
+          "style": {
+            "type": "string",
+            "enum": [
+              "calm",
+              "hype",
+              "direct",
+              "playful",
+              "clarifying"
+            ],
+            "title": "Style"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "style",
+          "confidence",
+          "evidence"
+        ],
+        "title": "RecommendedResponseStyle",
+        "description": "A stance suggestion, not a script. ``style`` is the enum the caller should branch on."
+      },
+      "Segment": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 20000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "speaker": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 80
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker"
+          },
+          "start": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start",
+            "description": "Start time in seconds."
+          },
+          "end": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End",
+            "description": "End time in seconds."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "Segment",
+        "description": "One conversational turn, optionally timed and attributed."
+      },
+      "SignalStrength": {
+        "properties": {
+          "score": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "score",
+          "confidence",
+          "evidence"
+        ],
+        "title": "SignalStrength",
+        "description": "How much paralinguistic material the input actually contains."
+      },
+      "Span": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "start_char": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start Char"
+          },
+          "end_char": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Char"
+          },
+          "speaker": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Speaker"
+          },
+          "start": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start",
+            "description": "Turn start in seconds, if provided."
+          },
+          "end": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End",
+            "description": "Turn end in seconds, if provided."
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "current",
+              "context"
+            ],
+            "title": "Source",
+            "default": "current"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "Span",
+        "description": "A slice of the input that justified an inference."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "Zone": {
+        "properties": {
+          "topic": {
+            "type": "string",
+            "title": "Topic"
+          },
+          "span": {
+            "$ref": "#/components/schemas/Span"
+          },
+          "intensity": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Intensity"
+          },
+          "confidence": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Confidence"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "array",
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "topic",
+          "span",
+          "intensity",
+          "confidence",
+          "evidence"
+        ],
+        "title": "Zone",
+        "description": "A topic span where pressure or momentum clusters."
+      }
+    }
+  }
+}
