@@ -114,7 +114,7 @@ CORE_FILLER_RE = re.compile(r"(?i)(?<!\w)(?:uh+|um+|erm+)(?!\w)")
 SARCASM_SLASH_RE = re.compile(r"(?i)(?:^|\s)/s\b")
 QUOTE_RE = re.compile(r"[\"“”]([^\"“”]{2,40})[\"“”]")
 EMOTICON_POS_RE = re.compile(r"(?:(?<!\w)[:;=]-?[)D]|<3|\bxd\b)", re.IGNORECASE)
-EMOTICON_NEG_RE = re.compile(r"(?<!\w)[:;=]-?[()]")
+EMOTICON_NEG_RE = re.compile(r"(?<!\w)[:;=]-?[(]")
 
 ACRONYMS = frozenset(
     {
