@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "emotional_state": {
+    "frustration": 0.5198,
+    "excitement": 0.0,
+    "confusion": 0.0,
+    "relief": 0.0,
+    "dominant": "frustration",
+    "confidence": 0.6169,
+    "evidence": [
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"You never\"",
+        "weight": 0.5333,
+        "span": {
+          "text": "You never",
+          "speaker": "Alex",
+          "source": "context"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"third time\"",
+        "weight": 0.5333,
+        "span": {
+          "text": "third time",
+          "speaker": "Alex",
+          "source": "context"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"you ignored\"",
+        "weight": 0.5333,
+        "span": {
+          "text": "you ignored",
+          "speaker": "Alex",
+          "source": "context"
+        }
+      },
+      {
+        "feature": "context_carry",
+        "detail": "short reply inherits prior emotional load",
+        "weight": 0.3402
+      },
+      {
+        "feature": "dismissive",
+        "detail": "dismissive \"fine\"",
+        "weight": 0.198,
+        "span": {
+          "text": "Fine",
+          "start_char": 0,
+          "end_char": 4,
+          "speaker": "Jordan",
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "signal_strength": {
+    "score": 0.288,
+    "confidence": 0.3733,
+    "evidence": [
+      {
+        "feature": "dismissive",
+        "detail": "dismissive \"fine\"",
+        "weight": 0.9,
+        "span": {
+          "text": "Fine",
+          "start_char": 0,
+          "end_char": 4,
+          "speaker": "Jordan",
+          "source": "current"
+        }
+      },
+      {
+        "feature": "intent_drift",
+        "detail": "wording diverges from the surrounding cues (0.70)",
+        "weight": 0.6988
+      }
+    ]
+  },
+  "intent_alignment": {
+    "score": 0.3012,
+    "drift": 0.6988,
+    "label": "contradictory",
+    "confidence": 0.6195,
+    "evidence": [
+      {
+        "feature": "dismissive",
+        "detail": "clipped reply after prior frustration 0.80",
+        "weight": 0.9,
+        "span": {
+          "text": "Fine.",
+          "start_char": 0,
+          "end_char": 5,
+          "speaker": "Jordan",
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "pressure_zones": [],
+  "momentum_zones": [],
+  "connection_score": {
+    "score": 0.0,
+    "confidence": 0.3,
+    "components": {
+      "laughter": 0.0,
+      "mirroring": 0.0,
+      "rhythm": 0.0,
+      "backchannel": 0.0
+    },
+    "evidence": []
+  },
+  "recommended_response_style": {
+    "style": "calm",
+    "confidence": 0.5799,
+    "evidence": [
+      {
+        "feature": "style_rule",
+        "detail": "frustration 0.52 is the leading load",
+        "weight": 0.5198
+      }
+    ]
+  }
+}

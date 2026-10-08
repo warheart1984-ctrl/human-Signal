@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "emotional_state": {
+    "frustration": 0.0,
+    "excitement": 0.0,
+    "confusion": 0.0,
+    "relief": 0.0,
+    "dominant": "neutral",
+    "confidence": 0.2467,
+    "evidence": []
+  },
+  "signal_strength": {
+    "score": 0.0212,
+    "confidence": 0.2467,
+    "evidence": []
+  },
+  "intent_alignment": {
+    "score": 0.5,
+    "drift": 0.0,
+    "label": "uncertain",
+    "confidence": 0.3,
+    "evidence": []
+  },
+  "pressure_zones": [],
+  "momentum_zones": [],
+  "connection_score": {
+    "score": 0.3435,
+    "confidence": 0.6376,
+    "components": {
+      "laughter": 0.0,
+      "mirroring": 0.2514,
+      "rhythm": 0.1091,
+      "backchannel": 0.5
+    },
+    "evidence": [
+      {
+        "feature": "backchannel",
+        "detail": "1 short acknowledgement(s)",
+        "weight": 0.5
+      },
+      {
+        "feature": "mirroring",
+        "detail": "lexical overlap 0.05, echo 0.09",
+        "weight": 0.2514
+      }
+    ]
+  },
+  "recommended_response_style": {
+    "style": "direct",
+    "confidence": 0.231,
+    "evidence": [
+      {
+        "feature": "style_rule",
+        "detail": "no strong emotional lead \u2014 stay plain and specific",
+        "weight": 0.2
+      }
+    ]
+  }
+}
