@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0.0",
+  "emotional_state": {
+    "frustration": 0.0,
+    "excitement": 0.0,
+    "confusion": 0.0,
+    "relief": 0.0,
+    "dominant": "neutral",
+    "confidence": 0.46,
+    "evidence": []
+  },
+  "signal_strength": {
+    "score": 0.6887,
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "feature": "commitment",
+        "detail": "commitment \"$5K\"",
+        "weight": 0.95,
+        "span": {
+          "text": "$5K",
+          "start_char": 765,
+          "end_char": 768,
+          "speaker": "Daniel",
+          "start": 260.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "commitment",
+        "detail": "commitment \"paid\"",
+        "weight": 0.95,
+        "span": {
+          "text": "paid",
+          "start_char": 781,
+          "end_char": 785,
+          "speaker": "Daniel",
+          "start": 260.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "commitment",
+        "detail": "commitment \"transaction\"",
+        "weight": 0.95,
+        "span": {
+          "text": "transaction",
+          "start_char": 786,
+          "end_char": 797,
+          "speaker": "Daniel",
+          "start": 260.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_positive",
+        "detail": "lexicon positive \"good\"",
+        "weight": 0.7,
+        "span": {
+          "text": "good",
+          "start_char": 138,
+          "end_char": 142,
+          "speaker": "Daniel",
+          "start": 0.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_positive",
+        "detail": "lexicon positive \"good\"",
+        "weight": 0.7,
+        "span": {
+          "text": "good",
+          "start_char": 155,
+          "end_char": 159,
+          "speaker": "Daniel",
+          "start": 0.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "commitment",
+        "detail": "commitment \"pay\"",
+        "weight": 0.28,
+        "span": {
+          "text": "pay",
+          "start_char": 967,
+          "end_char": 970,
+          "speaker": "Daniel",
+          "start": 260.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "commitment",
+        "detail": "commitment \"rent\"",
+        "weight": 0.28,
+        "span": {
+          "text": "rent",
+          "start_char": 971,
+          "end_char": 975,
+          "speaker": "Daniel",
+          "start": 260.0,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "intent_alignment": {
+    "score": 0.64,
+    "drift": 0.0,
+    "label": "aligned",
+    "confidence": 0.545,
+    "evidence": [
+      {
+        "feature": "no_drift_cues",
+        "detail": "enough text to read, and no contradiction cues fired",
+        "weight": 0.3
+      }
+    ]
+  },
+  "pressure_zones": [
+    {
+      "topic": "one paid transaction verified route",
+      "span": {
+        "text": "One paid transaction, one verified route, one HumanSignal output.",
+        "start_char": 777,
+        "end_char": 842,
+        "speaker": "Daniel",
+        "start": 260.0,
+        "source": "current"
+      },
+      "intensity": 0.7454,
+      "confidence": 0.5463,
+      "evidence": [
+        {
+          "feature": "commitment",
+          "detail": "commitment \"paid\"",
+          "weight": 0.684,
+          "span": {
+            "text": "paid",
+            "start_char": 781,
+            "end_char": 785,
+            "speaker": "Daniel",
+            "start": 260.0,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "commitment",
+          "detail": "commitment \"transaction\"",
+          "weight": 0.684,
+          "span": {
+            "text": "transaction",
+            "start_char": 786,
+            "end_char": 797,
+            "speaker": "Daniel",
+            "start": 260.0,
+            "source": "current"
+          }
+        }
+      ]
+    },
+    {
+      "topic": "want ghost machine sit gateway",
+      "span": {
+        "text": "\"If you want the Ghost in the Machine to sit on your Gateway, we test the 'Tenant Routing' with the $5K filter.",
+        "start_char": 665,
+        "end_char": 776,
+        "speaker": "Daniel",
+        "start": 260.0,
+        "source": "current"
+      },
+      "intensity": 0.4954,
+      "confidence": 0.4839,
+      "evidence": [
+        {
+          "feature": "commitment",
+          "detail": "commitment \"$5K\"",
+          "weight": 0.684,
+          "span": {
+            "text": "$5K",
+            "start_char": 765,
+            "end_char": 768,
+            "speaker": "Daniel",
+            "start": 260.0,
+            "source": "current"
+          }
+        }
+      ]
+    }
+  ],
+  "momentum_zones": [],
+  "connection_score": {
+    "score": 0.3435,
+    "confidence": 0.6376,
+    "components": {
+      "laughter": 0.0,
+      "mirroring": 0.2514,
+      "rhythm": 0.1091,
+      "backchannel": 0.5
+    },
+    "evidence": [
+      {
+        "feature": "backchannel",
+        "detail": "1 short acknowledgement(s)",
+        "weight": 0.5
+      },
+      {
+        "feature": "mirroring",
+        "detail": "lexical overlap 0.05, echo 0.09",
+        "weight": 0.2514
+      }
+    ]
+  },
+  "recommended_response_style": {
+    "style": "direct",
+    "confidence": 0.6643,
+    "evidence": [
+      {
+        "feature": "style_rule",
+        "detail": "no strong emotional lead — stay plain and specific",
+        "weight": 0.6887
+      }
+    ]
+  }
+}
