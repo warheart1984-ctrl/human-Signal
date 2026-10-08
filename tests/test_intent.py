@@ -33,7 +33,7 @@ def test_hedged_positive_drifts() -> None:
 
 
 def test_sarcasm_emoji_drifts() -> None:
-    result = compile_signals(CompileRequest(language="en", text="Great job \ud83d\ude43"))
+    result = compile_signals(CompileRequest(language="en", text='Great job 🙃'))
     assert result.intent_alignment.drift >= 0.45
     assert result.recommended_response_style.style == "calm"
 
