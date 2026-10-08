@@ -1,0 +1,29 @@
+{
+  "language": "en",
+  "transcript": [
+    {
+      "speaker": "Sam",
+      "text": "um so the test fails when the token is empty?",
+      "start": 0.0,
+      "end": 3.4
+    },
+    {
+      "speaker": "Rae",
+      "text": "wait, I think... we do not handle the null path",
+      "start": 5.2,
+      "end": 9.0
+    },
+    {
+      "speaker": "Sam",
+      "text": "oh I mean, should we return early or throw?",
+      "start": 9.4,
+      "end": 12.5
+    },
+    {
+      "speaker": "Rae",
+      "text": "let's trace it. if input is empty then parse returns None. that's the bug.",
+      "start": 12.8,
+      "end": 17.5
+    }
+  ]
+}

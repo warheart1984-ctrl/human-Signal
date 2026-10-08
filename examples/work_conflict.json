@@ -1,0 +1,29 @@
+{
+  "language": "en",
+  "transcript": [
+    {
+      "speaker": "Alex",
+      "text": "I sent the deck yesterday and you still haven't looked at it.",
+      "start": 0.0,
+      "end": 3.6
+    },
+    {
+      "speaker": "Jordan",
+      "text": "I was... in meetings, I guess.",
+      "start": 5.4,
+      "end": 8.2
+    },
+    {
+      "speaker": "Alex",
+      "text": "You're always in meetings. This is the third time.",
+      "start": 8.5,
+      "end": 11.4
+    },
+    {
+      "speaker": "Jordan",
+      "text": "Fine.",
+      "start": 12.0,
+      "end": 12.6
+    }
+  ]
+}
