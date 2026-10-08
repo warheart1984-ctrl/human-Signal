@@ -1,0 +1,351 @@
+{
+  "schema_version": "1.0.0",
+  "emotional_state": {
+    "frustration": 0.5323,
+    "excitement": 0.082,
+    "confusion": 0.3103,
+    "relief": 0.3852,
+    "dominant": "frustration",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"You never\"",
+        "weight": 0.8,
+        "span": {
+          "text": "You never",
+          "start_char": 0,
+          "end_char": 9,
+          "speaker": "Mom",
+          "start": 0.0,
+          "end": 3.8,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"nothing happened\"",
+        "weight": 0.8,
+        "span": {
+          "text": "nothing happened",
+          "start_char": 42,
+          "end_char": 58,
+          "speaker": "Mom",
+          "start": 0.0,
+          "end": 3.8,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "relief_after_load",
+        "detail": "softening after prior frustration 0.80",
+        "weight": 0.48
+      },
+      {
+        "feature": "relief_after_load",
+        "detail": "softening after prior frustration 0.80",
+        "weight": 0.48
+      },
+      {
+        "feature": "filler",
+        "detail": "filler \"um\"",
+        "weight": 0.4,
+        "span": {
+          "text": "um",
+          "start_char": 71,
+          "end_char": 73,
+          "speaker": "Alex",
+          "start": 5.1,
+          "end": 8.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "repair",
+        "detail": "repair \"I promise\"",
+        "weight": 0.304,
+        "span": {
+          "text": "I promise",
+          "start_char": 184,
+          "end_char": 193,
+          "speaker": "Alex",
+          "start": 12.0,
+          "end": 15.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "repair",
+        "detail": "repair \"I'm sorry\"",
+        "weight": 0.304,
+        "span": {
+          "text": "I'm sorry",
+          "start_char": 86,
+          "end_char": 95,
+          "speaker": "Alex",
+          "start": 5.1,
+          "end": 8.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "ellipsis",
+        "detail": "ellipsis",
+        "weight": 0.225,
+        "span": {
+          "text": "...",
+          "start_char": 73,
+          "end_char": 76,
+          "speaker": "Alex",
+          "start": 5.1,
+          "end": 8.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.30s",
+        "weight": 0.2125,
+        "span": {
+          "text": "I've been, um... slammed. I'm so",
+          "start_char": 60,
+          "end_char": 92,
+          "speaker": "Alex",
+          "start": 5.1,
+          "end": 8.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "repetition",
+        "detail": "repeated phrase \"I know. I know\"",
+        "weight": 0.144,
+        "span": {
+          "text": "I know. I know",
+          "start_char": 146,
+          "end_char": 160,
+          "speaker": "Alex",
+          "start": 12.0,
+          "end": 15.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "repetition",
+        "detail": "repeated phrase \"I know. I know\"",
+        "weight": 0.128,
+        "span": {
+          "text": "I know. I know",
+          "start_char": 146,
+          "end_char": 160,
+          "speaker": "Alex",
+          "start": 12.0,
+          "end": 15.2,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "signal_strength": {
+    "score": 0.6759,
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"You never\"",
+        "weight": 1.0,
+        "span": {
+          "text": "You never",
+          "start_char": 0,
+          "end_char": 9,
+          "speaker": "Mom",
+          "start": 0.0,
+          "end": 3.8,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"nothing happened\"",
+        "weight": 1.0,
+        "span": {
+          "text": "nothing happened",
+          "start_char": 42,
+          "end_char": 58,
+          "speaker": "Mom",
+          "start": 0.0,
+          "end": 3.8,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "filler",
+        "detail": "filler \"um\"",
+        "weight": 0.8,
+        "span": {
+          "text": "um",
+          "start_char": 71,
+          "end_char": 73,
+          "speaker": "Alex",
+          "start": 5.1,
+          "end": 8.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "repetition",
+        "detail": "repeated phrase \"I know. I know\"",
+        "weight": 0.8,
+        "span": {
+          "text": "I know. I know",
+          "start_char": 146,
+          "end_char": 160,
+          "speaker": "Alex",
+          "start": 12.0,
+          "end": 15.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "ellipsis",
+        "detail": "ellipsis",
+        "weight": 0.75,
+        "span": {
+          "text": "...",
+          "start_char": 73,
+          "end_char": 76,
+          "speaker": "Alex",
+          "start": 5.1,
+          "end": 8.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.30s",
+        "weight": 0.5312,
+        "span": {
+          "text": "I've been, um... slammed. I'm so",
+          "start_char": 60,
+          "end_char": 92,
+          "speaker": "Alex",
+          "start": 5.1,
+          "end": 8.4,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "intent_alignment": {
+    "score": 0.8275,
+    "drift": 0.0,
+    "label": "aligned",
+    "confidence": 0.6325,
+    "evidence": [
+      {
+        "feature": "polarity_match",
+        "detail": "frustration lexicon and frustration cues point the same way",
+        "weight": 0.35
+      },
+      {
+        "feature": "repair",
+        "detail": "repair or apology language",
+        "weight": 0.3
+      }
+    ]
+  },
+  "pressure_zones": [
+    {
+      "topic": "slammed sorry",
+      "span": {
+        "text": "I've been, um... slammed. I'm sorry.",
+        "start_char": 60,
+        "end_char": 96,
+        "speaker": "Alex",
+        "start": 5.1,
+        "end": 8.4,
+        "source": "current"
+      },
+      "intensity": 0.6484,
+      "confidence": 0.7621,
+      "evidence": [
+        {
+          "feature": "filler",
+          "detail": "filler \"um\"",
+          "weight": 0.416,
+          "span": {
+            "text": "um",
+            "start_char": 71,
+            "end_char": 73,
+            "speaker": "Alex",
+            "start": 5.1,
+            "end": 8.4,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "pause",
+          "detail": "pause gap 1.30s",
+          "weight": 0.3294,
+          "span": {
+            "text": "I've been, um... slammed. I'm so",
+            "start_char": 60,
+            "end_char": 92,
+            "speaker": "Alex",
+            "start": 5.1,
+            "end": 8.4,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "ellipsis",
+          "detail": "ellipsis",
+          "weight": 0.3,
+          "span": {
+            "text": "...",
+            "start_char": 73,
+            "end_char": 76,
+            "speaker": "Alex",
+            "start": 5.1,
+            "end": 8.4,
+            "source": "current"
+          }
+        }
+      ]
+    }
+  ],
+  "momentum_zones": [],
+  "connection_score": {
+    "score": 0.3499,
+    "confidence": 0.6329,
+    "components": {
+      "laughter": 0.0,
+      "mirroring": 0.254,
+      "rhythm": 0.4041,
+      "backchannel": 0.0
+    },
+    "evidence": [
+      {
+        "feature": "rhythm",
+        "detail": "turn timing or length is relatively steady",
+        "weight": 0.4041
+      },
+      {
+        "feature": "mirroring",
+        "detail": "lexical overlap 0.05, echo 0.06",
+        "weight": 0.254
+      }
+    ]
+  },
+  "recommended_response_style": {
+    "style": "calm",
+    "confidence": 0.5861,
+    "evidence": [
+      {
+        "feature": "style_rule",
+        "detail": "frustration 0.53 is the leading load",
+        "weight": 0.5323
+      }
+    ]
+  }
+}
