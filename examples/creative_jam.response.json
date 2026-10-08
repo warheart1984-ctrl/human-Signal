@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.0.0",
+  "emotional_state": {
+    "frustration": 0.1538,
+    "excitement": 0.6241,
+    "confusion": 0.429,
+    "relief": 0.085,
+    "dominant": "excitement",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "lexicon_confusion",
+        "detail": "lexicon confusion \"wait what\"",
+        "weight": 0.72,
+        "span": {
+          "text": "wait what",
+          "start_char": 0,
+          "end_char": 9,
+          "speaker": "Noor",
+          "start": 0.0,
+          "end": 3.1,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "question",
+        "detail": "question cluster",
+        "weight": 0.58,
+        "span": {
+          "text": "??",
+          "start_char": 189,
+          "end_char": 191,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "caps",
+        "detail": "caps \"YESSS\"",
+        "weight": 0.493,
+        "span": {
+          "text": "YESSS",
+          "start_char": 65,
+          "end_char": 70,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "exclamation",
+        "detail": "exclamation cluster",
+        "weight": 0.48,
+        "span": {
+          "text": "!!",
+          "start_char": 62,
+          "end_char": 64,
+          "speaker": "Noor",
+          "start": 0.0,
+          "end": 3.1,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "elongation",
+        "detail": "elongated \"YESSS\"",
+        "weight": 0.425,
+        "span": {
+          "text": "YESSS",
+          "start_char": 65,
+          "end_char": 70,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "laughter",
+        "detail": "marker [laughter]",
+        "weight": 0.399,
+        "span": {
+          "text": "[laughter]",
+          "start_char": 90,
+          "end_char": 100,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "laughter",
+        "detail": "laughter \"haha\"",
+        "weight": 0.378,
+        "span": {
+          "text": "haha",
+          "start_char": 120,
+          "end_char": 124,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "caps",
+        "detail": "caps \"EARLY\"",
+        "weight": 0.221,
+        "span": {
+          "text": "EARLY",
+          "start_char": 29,
+          "end_char": 34,
+          "speaker": "Noor",
+          "start": 0.0,
+          "end": 3.1,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "repetition",
+        "detail": "repeated \"okay\"",
+        "weight": 0.21,
+        "span": {
+          "text": "okay okay",
+          "start_char": 125,
+          "end_char": 134,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "caps",
+        "detail": "caps \"EARLY\"",
+        "weight": 0.17,
+        "span": {
+          "text": "EARLY",
+          "start_char": 29,
+          "end_char": 34,
+          "speaker": "Noor",
+          "start": 0.0,
+          "end": 3.1,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "laughter",
+        "detail": "marker [laughter]",
+        "weight": 0.114,
+        "span": {
+          "text": "[laughter]",
+          "start_char": 90,
+          "end_char": 100,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "laughter",
+        "detail": "laughter \"haha\"",
+        "weight": 0.108,
+        "span": {
+          "text": "haha",
+          "start_char": 120,
+          "end_char": 124,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "signal_strength": {
+    "score": 0.837,
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "exclamation",
+        "detail": "exclamation cluster",
+        "weight": 1.0,
+        "span": {
+          "text": "!!",
+          "start_char": 62,
+          "end_char": 64,
+          "speaker": "Noor",
+          "start": 0.0,
+          "end": 3.1,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "question",
+        "detail": "question cluster",
+        "weight": 1.0,
+        "span": {
+          "text": "??",
+          "start_char": 189,
+          "end_char": 191,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "laughter",
+        "detail": "marker [laughter]",
+        "weight": 0.95,
+        "span": {
+          "text": "[laughter]",
+          "start_char": 90,
+          "end_char": 100,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "laughter",
+        "detail": "laughter \"haha\"",
+        "weight": 0.9,
+        "span": {
+          "text": "haha",
+          "start_char": 120,
+          "end_char": 124,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_confusion",
+        "detail": "lexicon confusion \"wait what\"",
+        "weight": 0.9,
+        "span": {
+          "text": "wait what",
+          "start_char": 0,
+          "end_char": 9,
+          "speaker": "Noor",
+          "start": 0.0,
+          "end": 3.1,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "caps",
+        "detail": "caps \"EARLY\"",
+        "weight": 0.85,
+        "span": {
+          "text": "EARLY",
+          "start_char": 29,
+          "end_char": 34,
+          "speaker": "Noor",
+          "start": 0.0,
+          "end": 3.1,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "caps",
+        "detail": "caps \"YESSS\"",
+        "weight": 0.85,
+        "span": {
+          "text": "YESSS",
+          "start_char": 65,
+          "end_char": 70,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "elongation",
+        "detail": "elongated \"YESSS\"",
+        "weight": 0.85,
+        "span": {
+          "text": "YESSS",
+          "start_char": 65,
+          "end_char": 70,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "repetition",
+        "detail": "repeated \"okay\"",
+        "weight": 0.75,
+        "span": {
+          "text": "okay okay",
+          "start_char": 125,
+          "end_char": 134,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "intent_alignment": {
+    "score": 0.8275,
+    "drift": 0.0,
+    "label": "aligned",
+    "confidence": 0.6325,
+    "evidence": [
+      {
+        "feature": "laughter",
+        "detail": "laughter shows up from more than one speaker",
+        "weight": 0.35
+      },
+      {
+        "feature": "polarity_match",
+        "detail": "excitement cues and energetic wording point the same way",
+        "weight": 0.3
+      }
+    ]
+  },
+  "pressure_zones": [],
+  "momentum_zones": [
+    {
+      "topic": "yesss drums absolutely wild",
+      "span": {
+        "text": "YESSS and the drums just [laughter] go absolutely wild",
+        "start_char": 65,
+        "end_char": 119,
+        "speaker": "Sol",
+        "start": 3.3,
+        "end": 6.4,
+        "source": "current"
+      },
+      "intensity": 0.6262,
+      "confidence": 0.7565,
+      "evidence": [
+        {
+          "feature": "elongation",
+          "detail": "elongated \"YESSS\"",
+          "weight": 0.374,
+          "span": {
+            "text": "YESSS",
+            "start_char": 65,
+            "end_char": 70,
+            "speaker": "Sol",
+            "start": 3.3,
+            "end": 6.4,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "caps",
+          "detail": "caps \"YESSS\"",
+          "weight": 0.306,
+          "span": {
+            "text": "YESSS",
+            "start_char": 65,
+            "end_char": 70,
+            "speaker": "Sol",
+            "start": 3.3,
+            "end": 6.4,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "laughter",
+          "detail": "marker [laughter]",
+          "weight": 0.304,
+          "span": {
+            "text": "[laughter]",
+            "start_char": 90,
+            "end_char": 100,
+            "speaker": "Sol",
+            "start": 3.3,
+            "end": 6.4,
+            "source": "current"
+          }
+        }
+      ]
+    },
+    {
+      "topic": "chorus hits early drop",
+      "span": {
+        "text": "wait what if the chorus hits EARLY and then we drop everything!!",
+        "start_char": 0,
+        "end_char": 64,
+        "speaker": "Noor",
+        "start": 0.0,
+        "end": 3.1,
+        "source": "current"
+      },
+      "intensity": 0.5443,
+      "confidence": 0.6161,
+      "evidence": [
+        {
+          "feature": "exclamation",
+          "detail": "exclamation cluster",
+          "weight": 0.48,
+          "span": {
+            "text": "!!",
+            "start_char": 62,
+            "end_char": 64,
+            "speaker": "Noor",
+            "start": 0.0,
+            "end": 3.1,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "caps",
+          "detail": "caps \"EARLY\"",
+          "weight": 0.306,
+          "span": {
+            "text": "EARLY",
+            "start_char": 29,
+            "end_char": 34,
+            "speaker": "Noor",
+            "start": 0.0,
+            "end": 3.1,
+            "source": "current"
+          }
+        }
+      ]
+    }
+  ],
+  "connection_score": {
+    "score": 0.6834,
+    "confidence": 0.615,
+    "components": {
+      "laughter": 0.9,
+      "mirroring": 0.0,
+      "rhythm": 0.0,
+      "backchannel": 0.0
+    },
+    "evidence": [
+      {
+        "feature": "laughter",
+        "detail": "shared laughter",
+        "weight": 0.9
+      },
+      {
+        "feature": "laughter",
+        "detail": "laughter \"haha\"",
+        "weight": 0.4,
+        "span": {
+          "text": "haha",
+          "start_char": 120,
+          "end_char": 124,
+          "speaker": "Noor",
+          "start": 6.6,
+          "end": 10.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "laughter",
+        "detail": "marker [laughter]",
+        "weight": 0.4,
+        "span": {
+          "text": "[laughter]",
+          "start_char": 90,
+          "end_char": 100,
+          "speaker": "Sol",
+          "start": 3.3,
+          "end": 6.4,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "recommended_response_style": {
+    "style": "hype",
+    "confidence": 0.6321,
+    "evidence": [
+      {
+        "feature": "style_rule",
+        "detail": "excitement 0.62 is the leading load",
+        "weight": 0.6241
+      }
+    ]
+  }
+}
