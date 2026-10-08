@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0.0",
+  "emotional_state": {
+    "frustration": 0.0851,
+    "excitement": 0.0,
+    "confusion": 0.5027,
+    "relief": 0.0,
+    "dominant": "confusion",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "self_correction",
+        "detail": "self correction \"I mean\"",
+        "weight": 0.448,
+        "span": {
+          "text": "I mean",
+          "start_char": 97,
+          "end_char": 103,
+          "speaker": "Sam",
+          "start": 9.4,
+          "end": 12.5,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "filler",
+        "detail": "filler \"um\"",
+        "weight": 0.4,
+        "span": {
+          "text": "um",
+          "start_char": 0,
+          "end_char": 2,
+          "speaker": "Sam",
+          "start": 0.0,
+          "end": 3.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "self_correction",
+        "detail": "leading repair \"wait\"",
+        "weight": 0.392,
+        "span": {
+          "text": "wait",
+          "start_char": 46,
+          "end_char": 50,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "question",
+        "detail": "question mark",
+        "weight": 0.3596,
+        "span": {
+          "text": "?",
+          "start_char": 44,
+          "end_char": 45,
+          "speaker": "Sam",
+          "start": 0.0,
+          "end": 3.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "question",
+        "detail": "question mark",
+        "weight": 0.3596,
+        "span": {
+          "text": "?",
+          "start_char": 136,
+          "end_char": 137,
+          "speaker": "Sam",
+          "start": 9.4,
+          "end": 12.5,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.80s",
+        "weight": 0.3375,
+        "span": {
+          "text": "wait, I think... we do not handl",
+          "start_char": 46,
+          "end_char": 78,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "ellipsis",
+        "detail": "ellipsis",
+        "weight": 0.225,
+        "span": {
+          "text": "...",
+          "start_char": 59,
+          "end_char": 62,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.80s",
+        "weight": 0.0844,
+        "span": {
+          "text": "wait, I think... we do not handl",
+          "start_char": 46,
+          "end_char": 78,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "signal_strength": {
+    "score": 0.7072,
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.80s",
+        "weight": 0.8438,
+        "span": {
+          "text": "wait, I think... we do not handl",
+          "start_char": 46,
+          "end_char": 78,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "filler",
+        "detail": "filler \"um\"",
+        "weight": 0.8,
+        "span": {
+          "text": "um",
+          "start_char": 0,
+          "end_char": 2,
+          "speaker": "Sam",
+          "start": 0.0,
+          "end": 3.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "self_correction",
+        "detail": "self correction \"I mean\"",
+        "weight": 0.8,
+        "span": {
+          "text": "I mean",
+          "start_char": 97,
+          "end_char": 103,
+          "speaker": "Sam",
+          "start": 9.4,
+          "end": 12.5,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "ellipsis",
+        "detail": "ellipsis",
+        "weight": 0.75,
+        "span": {
+          "text": "...",
+          "start_char": 59,
+          "end_char": 62,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "self_correction",
+        "detail": "leading repair \"wait\"",
+        "weight": 0.7,
+        "span": {
+          "text": "wait",
+          "start_char": 46,
+          "end_char": 50,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "question",
+        "detail": "question mark",
+        "weight": 0.62,
+        "span": {
+          "text": "?",
+          "start_char": 44,
+          "end_char": 45,
+          "speaker": "Sam",
+          "start": 0.0,
+          "end": 3.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "question",
+        "detail": "question mark",
+        "weight": 0.62,
+        "span": {
+          "text": "?",
+          "start_char": 136,
+          "end_char": 137,
+          "speaker": "Sam",
+          "start": 9.4,
+          "end": 12.5,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "hedge_weak",
+        "detail": "hedge weak \"I think\"",
+        "weight": 0.45,
+        "span": {
+          "text": "I think",
+          "start_char": 52,
+          "end_char": 59,
+          "speaker": "Rae",
+          "start": 5.2,
+          "end": 9.0,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "intent_alignment": {
+    "score": 0.74,
+    "drift": 0.0,
+    "label": "aligned",
+    "confidence": 0.55,
+    "evidence": [
+      {
+        "feature": "responsive",
+        "detail": "2 question(s) followed by a substantive reply",
+        "weight": 0.4
+      }
+    ]
+  },
+  "pressure_zones": [
+    {
+      "topic": "handle null path",
+      "span": {
+        "text": "wait, I think... we do not handle the null path",
+        "start_char": 46,
+        "end_char": 93,
+        "speaker": "Rae",
+        "start": 5.2,
+        "end": 9.0,
+        "source": "current"
+      },
+      "intensity": 0.7172,
+      "confidence": 0.86,
+      "evidence": [
+        {
+          "feature": "pause",
+          "detail": "pause gap 1.80s",
+          "weight": 0.5231,
+          "span": {
+            "text": "wait, I think... we do not handl",
+            "start_char": 46,
+            "end_char": 78,
+            "speaker": "Rae",
+            "start": 5.2,
+            "end": 9.0,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "self_correction",
+          "detail": "leading repair \"wait\"",
+          "weight": 0.35,
+          "span": {
+            "text": "wait",
+            "start_char": 46,
+            "end_char": 50,
+            "speaker": "Rae",
+            "start": 5.2,
+            "end": 9.0,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "ellipsis",
+          "detail": "ellipsis",
+          "weight": 0.3,
+          "span": {
+            "text": "...",
+            "start_char": 59,
+            "end_char": 62,
+            "speaker": "Rae",
+            "start": 5.2,
+            "end": 9.0,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "hedge_weak",
+          "detail": "hedge weak \"I think\"",
+          "weight": 0.09,
+          "span": {
+            "text": "I think",
+            "start_char": 52,
+            "end_char": 59,
+            "speaker": "Rae",
+            "start": 5.2,
+            "end": 9.0,
+            "source": "current"
+          }
+        }
+      ]
+    }
+  ],
+  "momentum_zones": [],
+  "connection_score": {
+    "score": 0.2725,
+    "confidence": 0.6239,
+    "components": {
+      "laughter": 0.0,
+      "mirroring": 0.1984,
+      "rhythm": 0.2791,
+      "backchannel": 0.0
+    },
+    "evidence": [
+      {
+        "feature": "rhythm",
+        "detail": "turn timing or length is relatively steady",
+        "weight": 0.2791
+      },
+      {
+        "feature": "mirroring",
+        "detail": "lexical overlap 0.05, echo 0.00",
+        "weight": 0.1984
+      }
+    ]
+  },
+  "recommended_response_style": {
+    "style": "clarifying",
+    "confidence": 0.5714,
+    "evidence": [
+      {
+        "feature": "style_rule",
+        "detail": "confusion 0.50 leads frustration 0.09 and excitement 0.00",
+        "weight": 0.5027
+      }
+    ]
+  }
+}
