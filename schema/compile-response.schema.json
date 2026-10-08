@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://humansignal.dev/schema/compile-response-1.0.0.json",
+  "title": "HumanSignalCompileResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "emotional_state",
+    "signal_strength",
+    "intent_alignment",
+    "pressure_zones",
+    "momentum_zones",
+    "connection_score",
+    "recommended_response_style"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "emotional_state": { "$ref": "#/$defs/emotional_state" },
+    "signal_strength": { "$ref": "#/$defs/scored" },
+    "intent_alignment": { "$ref": "#/$defs/intent_alignment" },
+    "pressure_zones": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/zone" }
+    },
+    "momentum_zones": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/zone" }
+    },
+    "connection_score": { "$ref": "#/$defs/connection_score" },
+    "recommended_response_style": { "$ref": "#/$defs/response_style" }
+  },
+  "$defs": {
+    "unit": { "type": "number", "minimum": 0, "maximum": 1 },
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string" },
+        "start_char": { "type": "integer", "minimum": 0 },
+        "end_char": { "type": "integer", "minimum": 0 },
+        "speaker": { "type": "string" },
+        "start": { "type": "number", "minimum": 0 },
+        "end": { "type": "number", "minimum": 0 },
+        "source": { "enum": ["current", "context"] }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["feature", "detail", "weight"],
+      "properties": {
+        "feature": { "type": "string", "minLength": 1 },
+        "detail": { "type": "string" },
+        "weight": { "$ref": "#/$defs/unit" },
+        "span": { "$ref": "#/$defs/span" }
+      }
+    },
+    "emotional_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frustration",
+        "excitement",
+        "confusion",
+        "relief",
+        "dominant",
+        "confidence",
+        "evidence"
+      ],
+      "properties": {
+        "frustration": { "$ref": "#/$defs/unit" },
+        "excitement": { "$ref": "#/$defs/unit" },
+        "confusion": { "$ref": "#/$defs/unit" },
+        "relief": { "$ref": "#/$defs/unit" },
+        "dominant": {
+          "enum": ["frustration", "excitement", "confusion", "relief", "neutral"]
+        },
+        "confidence": { "$ref": "#/$defs/unit" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    },
+    "scored": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "confidence", "evidence"],
+      "properties": {
+        "score": { "$ref": "#/$defs/unit" },
+        "confidence": { "$ref": "#/$defs/unit" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    },
+    "intent_alignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "drift", "label", "confidence", "evidence"],
+      "properties": {
+        "score": { "$ref": "#/$defs/unit" },
+        "drift": { "$ref": "#/$defs/unit" },
+        "label": { "enum": ["aligned", "drifting", "contradictory", "uncertain"] },
+        "confidence": { "$ref": "#/$defs/unit" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    },
+    "zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topic", "span", "intensity", "confidence", "evidence"],
+      "properties": {
+        "topic": { "type": "string" },
+        "span": { "$ref": "#/$defs/span" },
+        "intensity": { "$ref": "#/$defs/unit" },
+        "confidence": { "$ref": "#/$defs/unit" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    },
+    "connection_score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "confidence", "components", "evidence"],
+      "properties": {
+        "score": { "$ref": "#/$defs/unit" },
+        "confidence": { "$ref": "#/$defs/unit" },
+        "components": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["laughter", "mirroring", "rhythm", "backchannel"],
+          "properties": {
+            "laughter": { "$ref": "#/$defs/unit" },
+            "mirroring": { "$ref": "#/$defs/unit" },
+            "rhythm": { "$ref": "#/$defs/unit" },
+            "backchannel": { "$ref": "#/$defs/unit" }
+          }
+        },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    },
+    "response_style": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["style", "confidence", "evidence"],
+      "properties": {
+        "style": { "enum": ["calm", "hype", "direct", "playful", "clarifying"] },
+        "confidence": { "$ref": "#/$defs/unit" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      }
+    }
+  }
+}
