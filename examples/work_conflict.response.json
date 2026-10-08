@@ -1,0 +1,378 @@
+{
+  "schema_version": "1.0.0",
+  "emotional_state": {
+    "frustration": 0.6907,
+    "excitement": 0.0,
+    "confusion": 0.3253,
+    "relief": 0.0,
+    "dominant": "frustration",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"haven't looked\"",
+        "weight": 0.82,
+        "span": {
+          "text": "haven't looked",
+          "start_char": 40,
+          "end_char": 54,
+          "speaker": "Alex",
+          "start": 0.0,
+          "end": 3.6,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"You're always\"",
+        "weight": 0.8,
+        "span": {
+          "text": "You're always",
+          "start_char": 93,
+          "end_char": 106,
+          "speaker": "Alex",
+          "start": 8.5,
+          "end": 11.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"third time\"",
+        "weight": 0.8,
+        "span": {
+          "text": "third time",
+          "start_char": 132,
+          "end_char": 142,
+          "speaker": "Alex",
+          "start": 8.5,
+          "end": 11.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"still\"",
+        "weight": 0.451,
+        "span": {
+          "text": "still",
+          "start_char": 34,
+          "end_char": 39,
+          "speaker": "Alex",
+          "start": 0.0,
+          "end": 3.6,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.80s",
+        "weight": 0.3375,
+        "span": {
+          "text": "I was... in meetings, I guess.",
+          "start_char": 62,
+          "end_char": 92,
+          "speaker": "Jordan",
+          "start": 5.4,
+          "end": 8.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "hedge_strong",
+        "detail": "hedge strong \"I guess\"",
+        "weight": 0.288,
+        "span": {
+          "text": "I guess",
+          "start_char": 84,
+          "end_char": 91,
+          "speaker": "Jordan",
+          "start": 5.4,
+          "end": 8.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "ellipsis",
+        "detail": "ellipsis",
+        "weight": 0.225,
+        "span": {
+          "text": "...",
+          "start_char": 67,
+          "end_char": 70,
+          "speaker": "Jordan",
+          "start": 5.4,
+          "end": 8.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "dismissive",
+        "detail": "dismissive \"fine\"",
+        "weight": 0.198,
+        "span": {
+          "text": "Fine",
+          "start_char": 144,
+          "end_char": 148,
+          "speaker": "Jordan",
+          "start": 12.0,
+          "end": 12.6,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.80s",
+        "weight": 0.0844,
+        "span": {
+          "text": "I was... in meetings, I guess.",
+          "start_char": 62,
+          "end_char": 92,
+          "speaker": "Jordan",
+          "start": 5.4,
+          "end": 8.2,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "signal_strength": {
+    "score": 0.8074,
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"You're always\"",
+        "weight": 1.0,
+        "span": {
+          "text": "You're always",
+          "start_char": 93,
+          "end_char": 106,
+          "speaker": "Alex",
+          "start": 8.5,
+          "end": 11.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"haven't looked\"",
+        "weight": 1.0,
+        "span": {
+          "text": "haven't looked",
+          "start_char": 40,
+          "end_char": 54,
+          "speaker": "Alex",
+          "start": 0.0,
+          "end": 3.6,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"third time\"",
+        "weight": 1.0,
+        "span": {
+          "text": "third time",
+          "start_char": 132,
+          "end_char": 142,
+          "speaker": "Alex",
+          "start": 8.5,
+          "end": 11.4,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "dismissive",
+        "detail": "dismissive \"fine\"",
+        "weight": 0.9,
+        "span": {
+          "text": "Fine",
+          "start_char": 144,
+          "end_char": 148,
+          "speaker": "Jordan",
+          "start": 12.0,
+          "end": 12.6,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "pause",
+        "detail": "pause gap 1.80s",
+        "weight": 0.8438,
+        "span": {
+          "text": "I was... in meetings, I guess.",
+          "start_char": 62,
+          "end_char": 92,
+          "speaker": "Jordan",
+          "start": 5.4,
+          "end": 8.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "hedge_strong",
+        "detail": "hedge strong \"I guess\"",
+        "weight": 0.8,
+        "span": {
+          "text": "I guess",
+          "start_char": 84,
+          "end_char": 91,
+          "speaker": "Jordan",
+          "start": 5.4,
+          "end": 8.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "ellipsis",
+        "detail": "ellipsis",
+        "weight": 0.75,
+        "span": {
+          "text": "...",
+          "start_char": 67,
+          "end_char": 70,
+          "speaker": "Jordan",
+          "start": 5.4,
+          "end": 8.2,
+          "source": "current"
+        }
+      },
+      {
+        "feature": "intent_drift",
+        "detail": "wording diverges from the surrounding cues (0.70)",
+        "weight": 0.6988
+      },
+      {
+        "feature": "lexicon_frustration",
+        "detail": "lexicon frustration \"still\"",
+        "weight": 0.55,
+        "span": {
+          "text": "still",
+          "start_char": 34,
+          "end_char": 39,
+          "speaker": "Alex",
+          "start": 0.0,
+          "end": 3.6,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "intent_alignment": {
+    "score": 0.3012,
+    "drift": 0.6988,
+    "label": "contradictory",
+    "confidence": 0.6195,
+    "evidence": [
+      {
+        "feature": "dismissive",
+        "detail": "clipped reply after prior frustration 0.80",
+        "weight": 0.9,
+        "span": {
+          "text": "Fine.",
+          "start_char": 144,
+          "end_char": 149,
+          "speaker": "Jordan",
+          "start": 12.0,
+          "end": 12.6,
+          "source": "current"
+        }
+      }
+    ]
+  },
+  "pressure_zones": [
+    {
+      "topic": "meetings",
+      "span": {
+        "text": "I was... in meetings, I guess.",
+        "start_char": 62,
+        "end_char": 92,
+        "speaker": "Jordan",
+        "start": 5.4,
+        "end": 8.2,
+        "source": "current"
+      },
+      "intensity": 0.6961,
+      "confidence": 0.774,
+      "evidence": [
+        {
+          "feature": "pause",
+          "detail": "pause gap 1.80s",
+          "weight": 0.5231,
+          "span": {
+            "text": "I was... in meetings, I guess.",
+            "start_char": 62,
+            "end_char": 92,
+            "speaker": "Jordan",
+            "start": 5.4,
+            "end": 8.2,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "hedge_strong",
+          "detail": "hedge strong \"I guess\"",
+          "weight": 0.368,
+          "span": {
+            "text": "I guess",
+            "start_char": 84,
+            "end_char": 91,
+            "speaker": "Jordan",
+            "start": 5.4,
+            "end": 8.2,
+            "source": "current"
+          }
+        },
+        {
+          "feature": "ellipsis",
+          "detail": "ellipsis",
+          "weight": 0.3,
+          "span": {
+            "text": "...",
+            "start_char": 67,
+            "end_char": 70,
+            "speaker": "Jordan",
+            "start": 5.4,
+            "end": 8.2,
+            "source": "current"
+          }
+        }
+      ]
+    }
+  ],
+  "momentum_zones": [],
+  "connection_score": {
+    "score": 0.3987,
+    "confidence": 0.6364,
+    "components": {
+      "laughter": 0.0,
+      "mirroring": 0.3622,
+      "rhythm": 0.3654,
+      "backchannel": 0.0
+    },
+    "evidence": [
+      {
+        "feature": "rhythm",
+        "detail": "turn timing or length is relatively steady",
+        "weight": 0.3654
+      },
+      {
+        "feature": "mirroring",
+        "detail": "lexical overlap 0.08, echo 0.07",
+        "weight": 0.3622
+      }
+    ]
+  },
+  "recommended_response_style": {
+    "style": "calm",
+    "confidence": 0.6653,
+    "evidence": [
+      {
+        "feature": "style_rule",
+        "detail": "frustration 0.69 is the leading load",
+        "weight": 0.6907
+      }
+    ]
+  }
+}
